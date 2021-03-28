@@ -12,7 +12,7 @@ html
         // All navigation bar links
         ul.navigation_links
           li
-            a(href='/') Home
+            a(href='/all_notes') Home
           li
             a(href='/upload_todo') Upload new image
     // my movie list with class represents each category movie. Example action, adventure
@@ -54,6 +54,17 @@ html
             img(src='images/walking-dead.jpg' alt='')
             strong The Walking Dead: World Beyond
             p Fantasy movie
+            
+        if notes.length
+          each note in notes
+            .filterMovies
+              .box
+                img(src='images/walking-dead.jpg' alt='')
+                strong #{ note.title }
+                p #{ note.desc }
+              //a.note(href=`notes/${note.id}`) #{ note.title }
+        else 
+          p ¡Aún no hay notas!
     // Footer block
     footer.fixed-footer
       .recent-movies

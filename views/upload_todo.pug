@@ -19,12 +19,12 @@ html
     .container-contact
       .box-contact
         // Left side will be map
-        .column
+        .column(methods='POST' action='/upload_todo')
           label(for='email') Title
           input#title(type='text' name='title' placeholder='My Birthday')
           label(for='description') Description
-          textarea#description(name='descr' placeholder='In the photo...' style='height: 150px')
-          input(type='submit-request' value='Save')
+          textarea#description(type='text' name='descr' placeholder='In the photo...' style='height: 150px')
+          button(type='submit') Save
     // Footer block
     footer.fixed-footer
       .recent-movies

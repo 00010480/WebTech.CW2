@@ -220,7 +220,7 @@ section {
 
 /*Contact Us page*/
 /* Style inputs */
-input[type=submit-request]:hover {
+button[type=submit-request]:hover {
     background-color: #45a049;
 }
 
@@ -255,7 +255,7 @@ input[type=text], select, textarea, input[type=month] {
 }
 
 /*properties for submit button*/
-input[type=submit-request] {
+button[type=submit-request] {
     background-color: #4CAF50;
     color: white;
     padding: 12px 20px;
