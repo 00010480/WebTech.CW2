@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    // Title of web page
+    title Upload new image
+    link(rel='stylesheet' type='text/css' href='static/styles.css')
+  body
+    header
+      // Logo of image
+      a(href='/') ImageTODO
+      nav
+        // All navigation bar links
+        ul.navigation_links
+          li
+            a(href='/') Home
+          li
+            a(href='/upload_todo') Upload new image
+    // We declare container with contact information with 2 columns
+    .container-contact
+      .box-contact
+        // Left side will be map
+        .column
+          label(for='email') Title
+          input#title(type='text' name='title' placeholder='My Birthday')
+          label(for='description') Description
+          textarea#description(name='descr' placeholder='In the photo...' style='height: 150px')
+          input(type='submit-request' value='Save')
+    // Footer block
+    footer.fixed-footer
+      .recent-movies
+      .footer-text
+        | This website was created to fulfill Web Technology module’s requirements and does not represent an actual company or service

@@ -1,0 +1,396 @@
+/*import font family from google fonts Roboto*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+/*To ovveride everything in my styles*/
+* {
+    margin: 0;
+/*    allows us make border elements with width and height*/
+    box-sizing: border-box;
+/*    make padding*/
+    padding: 0;
+/*    After importing fonts you should declare this in css*/
+    font-family: 'Roboto', sans-serif;
+}
+
+/*Setting for text links*/
+li, a {
+/*    text size*/
+    font-size: 16px;
+    /*hide underline in text*/
+    text-decoration: none;
+/*    text margin from left to make spaces between another link*/
+    margin-left: 15px;
+/*    align center text*/
+    text-align: center;
+    color: #ececec;
+}
+
+/*all my navigation bar*/
+header {
+/*    Display flexbox*/
+    display: flex;
+/*    distributes space between and around elements*/
+    justify-content: space-between;
+/*    center the content*/
+    align-items: center;
+/*    padding for ui*/
+    padding: 30px 10%;
+    /*    background color of all layout*/
+    background-color: #1f1f1f;
+}
+
+/*Logo settings*/
+.logo {
+/*    change cursor when user want click to the logo*/
+    cursor: pointer;
+/*    align logo to the right side*/
+    margin-right: auto
+}
+
+/*navigation bar links*/
+.navigation_links li {
+/*    set width and height to the element*/
+    display: inline-block;
+    padding: 0px, 20px;
+}
+
+/*properties of slider block*/
+.slider-block{
+    margin: 0;
+    padding: 0;
+/*    height of block slider*/
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1f1f1f;
+}
+
+/*slider itself properties*/
+.slider{
+/*    height and width of slider*/
+    width: 800px;
+    height: 500px;
+/*    corner radius*/
+    border-radius: 10px;
+/*    make visible only region inside element */
+    overflow: hidden;
+}
+
+/*Settings of slides*/
+.slides{
+    width: 500%;
+    height: 500px;
+    display: flex;
+}
+
+/*slider properties*/
+.slides input{
+    display: none;
+}
+/*slider ux properties*/
+.slide{
+    width: 20%;
+/*    transition between each slider*/
+    transition: 2s;
+}
+/*image slider*/
+.slide img{
+    width: 800px;
+    height: 500px;
+}
+
+
+/*Setting of grey line*/
+.recent-movies {
+    background-color: #1f1f1f;
+/*    Make grey line on top of navigation bar with boreder-top*/
+    border-top: 1px solid rgba(90,90,90,1);
+    list-style: none;
+}
+
+body {
+    background-color: #1f1f1f;
+    color: #ececec;
+}
+
+/*Settings of Recent Movies*/
+.recent-heading{
+/*    Margins of top, right, bottom*/
+    margin: 30px 30px 0px;
+/*    Margin left declare in percentage for responsivnes*/
+    margin-left: 10%;
+/*    text size*/
+    font-size: 22px;  
+}
+
+/*Settings of css grid element*/
+.movie-box {
+/*    make grid-layout with rows and columns*/
+    display: grid;
+    background-color: #1f1f1f;
+/*    sets the spacing between rows and columns*/
+    grid-gap: 10px;
+/*    sets the number of columns that can be in the grid if the screen size is smaller then adjusts the value in the grid to fit the screen*/
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
+.hidden {
+    display: none;
+}
+
+/*Setting for box*/
+.box {
+    align-items: center;
+/*    create shadow from all sides of box with rgba defined color*/
+    box-shadow: 2px 2px 30px rgba(0, 0, 0);
+/*    make corner radius from all sides */
+    border-radius: 15px;
+    margin: 20px 10px;
+/*    Only the area inside the element is shown, the rest will be hidden*/
+    overflow: hidden;
+    /*    Margin left and top declare in percentage for responsivnes*/
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10%;
+    padding: inherit;
+    background-color: #1f1f1f;
+}
+
+/*Setting for image in box*/
+.box > img {
+/*    adjust size of image to the box*/
+    width: 100%;
+    height: 100%;
+/*    defines how the picture should fill the block*/
+    object-fit: cover; 
+}
+
+/*Settings for text in box*/
+.box > strong, p {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+/*footer properties with bg color*/
+footer {
+    padding-bottom: 2%;
+    padding-top: 5%;
+    background-color: #1f1f1f;
+}
+/*footer text properties*/
+.footer-text {
+    text-align: center;
+    font-size: 16px;
+}
+
+/*for about company*/
+aside {
+    flex: 30%;
+    padding: 30px;
+}
+/*]main text properties*/
+article {
+    flex: 20%;
+    font-size:18px;
+    padding: 20px;
+    line-height: 170%
+}
+
+section {
+    display: flex;
+    flex-wrap:wrap;
+/*    Margin left declare in percentage for responsivnes*/
+    margin-left: 5%;
+    margin-right: 5%;
+    overflow: hidden;
+}
+
+/*image properties inside about us*/
+#panoramic {
+/*    width and height of image with left and right margins to be in center*/
+    width: 1200px;
+    height: 500px;
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+
+/*Contact Us page*/
+/* Style inputs */
+input[type=submit-request]:hover {
+    background-color: #45a049;
+}
+
+/*Settings of contact section*/
+.container-contact {
+    background-color: #1f1f1f;
+    padding: 20px;
+    color: #ffffff;
+}
+
+/*Settomgs for left and right boxes*/
+.column {
+    float: left;
+    width: 50%;
+    padding: 20px;
+}
+
+.box-contact:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*declaring properties for text input*/
+input[type=text], select, textarea, input[type=month] {
+/*width of type input border and background color*/
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+/*properties for submit button*/
+input[type=submit-request] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    cursor: pointer
+}
+/*When screen less 600px then it will be two columns for responsive layout*/
+@media screen and (max-width: 600px) {
+  .column, input[type=submit-request] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+
+/*Premiere properties*/
+/*Container of button style*/
+.container-button {
+    margin-top: 2%;
+    margin-left: 10%;
+    display: inline-flex;
+    align-items: center;
+    align-content: center;
+}
+/*Button style*/
+.premiere-button {
+/*    bakcgorund color of buttons*/
+    background-color: #3d3d3d;
+/*    color of borders*/
+    border: 5px solid #1f1f1f;
+/*    color of text*/
+    color: white;
+/*    width and height for buttons*/
+    padding: 15px 32px;
+/*    text size of button*/
+    font-size: 16px;
+/*    cursor when you click to the button*/
+    cursor: pointer;
+/*    from left side*/
+    float: left;
+}
+
+/*when we filter movie display none if this is another category of movie*/
+.filterMovies {
+    /* display: none; */
+}
+
+
+.show {
+/*    display an element as a block*/
+    display: block;
+}
+
+/*About movie settings*/
+/*get default margin and padding and declare text font*/
+body{
+    margin:0;
+    padding:0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*width and height in percentage for responsive web, declare flexbox and center the text*/
+main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*all container with grid layout with rows and columns*/
+.container{
+    width: 70%;
+    display: grid;
+/*    declare width of left and right columns*/
+    grid-template-columns: 40% 60%;
+    grid-template-areas: "cover content";
+    box-shadow:-2px 0px 33px 0px rgba(0,0,0,0.75);
+    margin-left: 15%;
+    margin-top: 1%;
+}
+
+/*settings for left side image covering all box*/
+.cover{
+    grid-area: cover;
+    height: 80vh;
+/*    source where my image located*/
+    background-image: url('penisula.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+
+/*settings for box with content declraing flexbox and center text*/
+.box-main{
+    grid-area: content;
+    background:#efefef;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+.box-text{
+    display: flex;
+    flex-direction: row;
+}
+.box-all-text{
+    width: 80%;
+    margin-left: 10%;
+}
+
+/*declaring properties for main text*/
+.box-all-text p{
+    font-size: 16px;
+    color: gray;
+    width: 70%;
+}
+.title{
+    font-size: 64px;
+    color: #000000;
+}
+
+/*settings for ratings of movie*/
+.rating-movie{
+    margin: 50px 0px;
+    width: 45%;
+    
+    display: flex;
+    justify-content: space-between;
+    /*Make vertical line from left side where rating located */
+    border-left: 5px solid rgb(248,97,0);
+}
+
+.rating-movie span{
+    padding-left: 10px;
+    color: gray;
+}
+.second-rating{
+    color: gray;
+}
