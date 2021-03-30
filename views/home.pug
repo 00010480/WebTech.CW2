@@ -3,7 +3,7 @@ html
   head
     // Title of web page
     title All Photos
-    link(rel='stylesheet' type='text/css' href='/static/styles.css')
+    link(rel='stylesheet' type='text/css' href='/styles.css')
   body
     header
       // Logo of image
@@ -12,9 +12,10 @@ html
         // All navigation bar links
         ul.navigation_links
           li
-            a(href='/all_notes') Home
+            a(href='/') Home
           li
             a(href='/upload_todo') Upload new image
+
     // my movie list with class represents each category movie. Example action, adventure
     .movie-filter
       .movie-box
@@ -59,10 +60,8 @@ html
           each note in notes
             .filterMovies
               .box
-                img(src='images/walking-dead.jpg' alt='')
-                strong #{ note.title }
-                p #{ note.desc }
-              //a.note(href=`notes/${note.id}`) #{ note.title }
+                strong(href=`notes/${ note.title }`)=  note.title
+                p(href=`notes/${ note.body }`)=  note.body
         else 
           p ¡Aún no hay notas!
     // Footer block

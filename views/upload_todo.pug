@@ -3,7 +3,7 @@ html
   head
     // Title of web page
     title Upload new image
-    link(rel='stylesheet' type='text/css' href='static/styles.css')
+    link(rel='stylesheet' type='text/css' href='/styles.css')
   body
     header
       // Logo of image
@@ -16,15 +16,22 @@ html
           li
             a(href='/upload_todo') Upload new image
     // We declare container with contact information with 2 columns
+
+    if success
+      p.success Note was added successfully
+
+    if error
+      p.error Please add note (title & body) before submitting
+
     .container-contact
       .box-contact
         // Left side will be map
-        .column(methods='POST' action='/upload_todo')
+        form.column(method="POST")
           label(for='email') Title
           input#title(type='text' name='title' placeholder='My Birthday')
           label(for='description') Description
-          textarea#description(type='text' name='descr' placeholder='In the photo...' style='height: 150px')
-          button(type='submit') Save
+          textarea#description(type='text' name='body' placeholder='In the photo...' style='height: 150px')
+          button Save
     // Footer block
     footer.fixed-footer
       .recent-movies

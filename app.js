@@ -1,34 +1,34 @@
-const express = require('express')
-const app = express()
+const path = require("path");
+const fs = require('fs');
 
-app.set('view engine', 'pug')
-app.use('/static', express.static('public'))
+const express = require("express");
+const app = express();
+const bodyParser = require("body-parser");
 
-const notes = require('./db')
+// routes
+const notes = require("./routes/notes");
+const getCollection = require("./utils").getCollection;
 
-app.get('/', (req, res) => {
-    //const notes = ['Dummy data 1', 'Dummy data 2', 'Dummy data 3']
-    res.render('home', {notes:notes})
-})
+// serving static files
+app.use(express.static('public'));
 
-app.get('/upload_todo', (req, res) => {
-    res.render('upload_todo')
-})
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
 
-// app.get('/all_notes', (req, res) => {
-//     res.render('all_notes', {notes:notes})
-// })
+// parse application/json
+app.use(bodyParser.json());
 
-// app.get('/notes', (req, res) => {
-//     //const notes = ['Dummy data 1', 'Dummy data 2', 'Dummy data 3']
-//     res.render('all_notes',)
-// })
+// setting template engine
+app.set("view engine", "pug");
 
-app.get('/notes/detail', (req, res) => {
-    res.render('notes_detail')
-})
+// notes urls
+app.use("/", notes);
 
-app.listen(8000, err => {
-    if (err) throw err
-    console.log('App is running ...')
-})
+app.get("/", (req, res) => {
+    res.render("home", { notes: notes });
+  });
+  
+  // listen for requests :)
+  const listener = app.listen(8000, () => {
+    console.log(`App is listening on port  http://localhost:8000`);
+  });
