@@ -13,16 +13,6 @@ class DbContext {
     this.collection = path.join(root, `database/${collection}`);
     console.log(this.collection)
   }
-  
-  getOne(id, successCb, errorCb) {
-    fs.readFile(this.collection, "utf8", (err, data) => {
-      if (err) errorCb();
-
-      const records = JSON.parse(data);
-      const record = records.filter(record => record.id == id)[0]
-      successCb(record);
-    });
-  }
 
   getAll(successCb, errorCb) {
     fs.readFile(this.collection, "utf8", (err, data) => {
@@ -44,6 +34,7 @@ class DbContext {
         id: generateID(),
         title: newRecord.title,
         body: newRecord.body,
+        image: newRecord.image,
         archive: false,
       });
 

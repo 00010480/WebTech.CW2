@@ -3,18 +3,18 @@ html
   head
     // Title of web page
     title All Photos
-    link(rel='stylesheet' type='text/css' href='/styles.css')
+    link(rel='stylesheet' type='text/css' href='styles/styles.css')
   body
     header
       // Logo of image
-      a(href='/') ImageTODO
+      a(href='/') MovieList
       nav
         // All navigation bar links
         ul.navigation_links
           li
             a(href='/') Home
           li
-            a(href='/upload_todo') Upload new image
+            a(href='/upload_todo') Upload new movie
 
     // my movie list with class represents each category movie. Example action, adventure
     .movie-filter
@@ -60,10 +60,19 @@ html
           each note in notes
             .filterMovies
               .box
+                img(id = 'imgPreview')
                 strong(href=`notes/${ note.title }`)=  note.title
                 p(href=`notes/${ note.body }`)=  note.body
         else 
-          p ¡Aún no hay notas!
+          p Please enter your movies that you want to watch
+
+    script.
+      document.addEventListener("DOMContentLoaded", () => {
+      const recentImageDataUrl = localStorage.getItem("recent-image");
+      if (recentImageDataUrl) {
+      document.querySelector("#imgPreview").setAttribute("src", recentImageDataUrl);
+      }
+      });
     // Footer block
     footer.fixed-footer
       .recent-movies

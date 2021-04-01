@@ -3,34 +3,42 @@ html
   head
     // Title of web page
     title Upload new image
-    link(rel='stylesheet' type='text/css' href='/styles.css')
+    link(rel='stylesheet' type='text/css' href='styles/styles.css')
   body
     header
       // Logo of image
-      a(href='/') ImageTODO
+      a(href='/') MovieList
       nav
         // All navigation bar links
         ul.navigation_links
           li
             a(href='/') Home
           li
-            a(href='/upload_todo') Upload new image
+            a(href='/upload_todo') Upload new movie
     // We declare container with contact information with 2 columns
 
     if success
-      p.success Note was added successfully
+      p.success Your movie was added successfully
 
     if error
-      p.error Please add note (title & body) before submitting
+      p.error Please add movie (title & body) before submitting
 
     .container-contact
       .box-contact
-        // Left side will be map
         form.column(method="POST")
           label(for='email') Title
           input#title(type='text' name='title' placeholder='My Birthday')
           label(for='description') Description
           textarea#description(type='text' name='body' placeholder='In the photo...' style='height: 150px')
+          input#myFileInput(type='file' name='image')
+          script.
+            document.querySelector("#myFileInput").addEventListener("change", function () {
+            const reader =  new FileReader();
+            reader.addEventListener("load", () => {
+            localStorage.setItem("recent-image", reader.result)
+            });
+            reader.readAsDataURL(this.files[i]);
+            });
           button Save
     // Footer block
     footer.fixed-footer
