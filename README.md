@@ -1,4 +1,4 @@
-# Movie List
+# Movie List (https://four-suave-quiet.glitch.me/)
 ## _This website was created to fulfill Web Technology module’s requirements and does not represent an actual company or service_
 
 This application will help you make a list of films that you would like to watch in the future. Thus, it helps the user not to forget the movie he wanted to watch and always expand his list. Each user can add his favorite movie in two clicks and get quick access to it using the website.
@@ -16,6 +16,10 @@ npm install express
 After express will be successfully installed you can open the project with this command
 ```sh
 node app
+```
+You also need to install body-parser to do this use this
+```sh
+npm install body-parser
 ```
 Then go to the browser and open this link
 ```sh
