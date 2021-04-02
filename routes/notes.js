@@ -15,8 +15,8 @@ dbc.useCollection("notes.json")
 
 router.get("/", (req, res) => {
   dbc.getAll(
-    records => res.render("home", { notes: records }),
-    () => res.render("home", { notes: null })
+    records => res.render("index", { notes: records }),
+    () => res.render("index", { notes: null })
   )
 })
 

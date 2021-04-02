@@ -25,7 +25,7 @@ app.set("view engine", "pug");
 app.use("/", notes);
 
 app.get("/", (req, res) => {
-    res.render("home", { notes: notes });
+    res.render("index", { notes: notes });
   });
   
   // listen for requests :)
