@@ -34,7 +34,7 @@ Our project using this dependencies:
 
 ## Links
 
-- [Github] - fast node.js network app framework
+- [Github] - Link to my project in github repository
 
 
    [@tjholowaychuk]: <http://twitter.com/tjholowaychuk>
